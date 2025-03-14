@@ -1,73 +1,73 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import React from "react";
+import { useState } from 'react'
+import React from 'react'
 
 const TeamBalancer = () => {
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState([])
   const [teams, setTeams] = useState([
-    { name: "Équipe 1", players: [] },
-    { name: "Équipe 2", players: [] },
-  ]);
-  const [playerName, setPlayerName] = useState("");
-  const [playerRating, setPlayerRating] = useState("");
-  const [teamName, setTeamName] = useState("");
+    { name: 'Équipe 1', players: [] },
+    { name: 'Équipe 2', players: [] },
+  ])
+  const [playerName, setPlayerName] = useState('')
+  const [playerRating, setPlayerRating] = useState('')
+  const [teamName, setTeamName] = useState('')
 
   const addPlayer = () => {
-    if (playerName && playerRating !== "" && players.length < 20) {
+    if (playerName && playerRating !== '' && players.length < 20) {
       setPlayers([
         ...players,
         { name: playerName, rating: Number(playerRating) },
-      ]);
-      setPlayerName("");
-      setPlayerRating("");
+      ])
+      setPlayerName('')
+      setPlayerRating('')
     }
-  };
+  }
 
   const removePlayer = (index) => {
-    setPlayers(players.filter((_, i) => i !== index));
-  };
+    setPlayers(players.filter((_, i) => i !== index))
+  }
 
   const updatePlayer = (index, name, rating) => {
-    const updatedPlayers = [...players];
-    updatedPlayers[index] = { name, rating: Number(rating) };
-    setPlayers(updatedPlayers);
-  };
+    const updatedPlayers = [...players]
+    updatedPlayers[index] = { name, rating: Number(rating) }
+    setPlayers(updatedPlayers)
+  }
 
   const addTeam = () => {
     if (teamName && teams.length < 10) {
-      setTeams([...teams, { name: teamName, players: [] }]);
-      setTeamName("");
+      setTeams([...teams, { name: teamName, players: [] }])
+      setTeamName('')
     }
-  };
+  }
 
   const removeTeam = (index) => {
-    setTeams(teams.filter((_, i) => i !== index));
-  };
+    setTeams(teams.filter((_, i) => i !== index))
+  }
 
   const resetAll = () => {
-    setPlayers([]); // Supprime tous les joueurs
+    setPlayers([]) // Supprime tous les joueurs
     setTeams([
-      { name: "Équipe 1", players: [] },
-      { name: "Équipe 2", players: [] },
-    ]); // Réinitialise les équipes par défaut
-  };
+      { name: 'Équipe 1', players: [] },
+      { name: 'Équipe 2', players: [] },
+    ]) // Réinitialise les équipes par défaut
+  }
 
   const updateTeamName = (index, name) => {
-    const updatedTeams = [...teams];
-    updatedTeams[index].name = name;
-    setTeams(updatedTeams);
-  };
+    const updatedTeams = [...teams]
+    updatedTeams[index].name = name
+    setTeams(updatedTeams)
+  }
 
   const balanceTeams = () => {
-    const sortedPlayers = [...players].sort((a, b) => b.rating - a.rating); // Trier les joueurs du plus fort au plus faible
-    const teamCount = teams.length;
+    const sortedPlayers = [...players].sort((a, b) => b.rating - a.rating) // Trier les joueurs du plus fort au plus faible
+    const teamCount = teams.length
 
     // Initialisation des équipes avec des joueurs vides et un total de score
     const balancedTeams = Array.from({ length: teamCount }, () => ({
       players: [],
       totalRating: 0,
-    }));
+    }))
 
     sortedPlayers.forEach((player) => {
       // Trier les équipes par totalRating croissant puis par nombre de joueurs croissant
@@ -75,12 +75,12 @@ const TeamBalancer = () => {
         a.totalRating === b.totalRating
           ? a.players.length - b.players.length
           : a.totalRating - b.totalRating
-      );
+      )
 
       // Ajouter le joueur à l'équipe la plus faible
-      balancedTeams[0].players.push(player);
-      balancedTeams[0].totalRating += player.rating;
-    });
+      balancedTeams[0].players.push(player)
+      balancedTeams[0].totalRating += player.rating
+    })
 
     // Mettre à jour l'état des équipes
     setTeams(
@@ -88,22 +88,22 @@ const TeamBalancer = () => {
         name: team.name,
         players: balancedTeams[index]?.players || [],
       }))
-    );
-  };
+    )
+  }
 
   return (
     <div className="p-6 bg-gray-900 min-h-screen text-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-4">Team Balancer</h2>
-      <div className="flex gap-4 m-8">
+      <h2 className="text-3xl font-bold mb-8">Team Balancer</h2>
+      <div className="flex gap-8 m-8">
         <button
           onClick={resetAll}
-          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md w-full"
+          className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-md w-full"
         >
           Réinitialiser
         </button>
       </div>
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg">
-        <div className="flex items-center gap-2 mb-4">
+      <div className="bg-gray-800 p-2 rounded-lg shadow-lg w-full max-w-lg">
+        <div className="flex items-center gap-4 mb-8">
           <input
             type="text"
             placeholder="Nom du joueur"
@@ -240,7 +240,7 @@ const TeamBalancer = () => {
         </footer>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TeamBalancer;
+export default TeamBalancer
