@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏆 Team Balancer : https://www.teambalancer.space/
 
-## Getting Started
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-First, run the development server:
+## 📌 Description
+**Team Balancer** est une application React permettant de répartir automatiquement des joueurs dans des équipes de manière **équilibrée**, en tenant compte de leurs niveau et du nombre de joueurs par équipe.
+Très pratique pour créer des équipes dans différents jeux vidéos (Lol, cs, valo ...) ou bien pour des équipes sportives.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎮 Fonctionnalités
+- ✅ Ajout/Suppression de joueurs avec un score (0-20)
+- ✅ Création/Suppression de plusieurs équipes (jusqu'à 10)
+- ✅ Répartition **équilibrée** des joueurs selon leur note
+- ✅ **Bouton de réinitialisation** pour recommencer
+- ✅ Interface **responsive & moderne** en TailwindCSS
+- ✅ 🎨 **Thème sombre** pour un meilleur confort visuel
+
+## 🛠️ Installation & Exécution
+### 1️⃣ **Cloner le dépôt**
+```sh
+git clone https://github.com/ErdalKARAER/team-balancer.git
+cd team-balancer
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ **Installer les dépendances**
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3️⃣ **Lancer le projet**
+```sh
+npm run dev
+```
+Puis, ouvre **[http://localhost:3000](http://localhost:3000)** dans ton navigateur.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🖼️ Aperçu
+![Team Balancer UI](./screenshot.png)
 
-## Learn More
+## 🏗️ Technologies utilisées
+- ⚛️ **React** (useState, useEffect)
+- 🎨 **TailwindCSS** (UI moderne et responsive)
+- 🏗️ **Next.js** (environnement de développement rapide)
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 Licence
+Ce projet est sous licence **MIT**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔗 Liens utiles
+- 🔗 [GitHub](https://github.com/ErdalKARAER/)
+- 🔗 [Documentation React](https://react.dev/)
+© 2025 - Erdal KARAER Tous droits réservés
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🚀 **Bon équilibrage d'équipes !** 😎
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
