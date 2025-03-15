@@ -49,6 +49,7 @@ Ce projet est sous licence **MIT**.
 ## 🔗 Liens utiles
 - 🔗 [GitHub](https://github.com/ErdalKARAER/)
 - 🔗 [Documentation React](https://react.dev/)
+- 🔗 [Documentation Next.js](https://nextjs.org/docs/app/getting-started)
 
 ---
 
