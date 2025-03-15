@@ -2,6 +2,9 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## 🖼️ Aperçu
+![alt text](https://github.com/ErdalKARAER/team_balancer/blob/create_project_structure/team_balancer.png?raw=true)
+
 ## 📌 Description
 **Team Balancer** est une application React permettant de répartir automatiquement des joueurs dans des équipes de manière **équilibrée**, en tenant compte de leurs niveau et du nombre de joueurs par équipe.
 Très pratique pour créer des équipes dans différents jeux vidéos (Lol, cs, valo ...) ou bien pour des équipes sportives.
@@ -31,9 +34,6 @@ npm install
 npm run dev
 ```
 Puis, ouvre **[http://localhost:3000](http://localhost:3000)** dans ton navigateur.
-
-## 🖼️ Aperçu
-![Team Balancer UI](./screenshot.png)
 
 ## 🏗️ Technologies utilisées
 - ⚛️ **React** (useState, useEffect)
